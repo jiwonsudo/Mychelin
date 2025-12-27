@@ -1,7 +1,6 @@
 import type { Metadata } from "next";
 import { fonts } from "./fonts";
 import "./globals.css";
-import "./reset.css";
 
 
 
