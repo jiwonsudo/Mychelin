@@ -15,7 +15,7 @@ const bookkLight = localFont({
 const poppinsSemiBold = localFont({
   src: '../public/fonts/Poppins-SemiBold.woff',
   display: 'swap',
-  variable: '--font-bookk-poppin',
+  variable: '--font-poppin',
 })
 
 export const fonts = { bookkBold, bookkLight, poppinsSemiBold };
