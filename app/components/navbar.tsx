@@ -18,7 +18,7 @@ export const Navbar = () => {
           <h1></h1>
         </div>
       </Link>
-      <Link href="/login" className="flex mr-3 --font-noto text-landing-page">
+      <Link href="/login" className="flex mr-3 font-noto text-landing-page">
         로그인
       </Link>
     </nav>
