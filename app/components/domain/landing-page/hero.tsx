@@ -1,6 +1,6 @@
 import Image from "next/image";
 
-import { Button } from "../../common/button";
+import { Button } from "../../common/Button";
 
 import stars_img from "../../../../public/images/landing-page/stars.png";
 import header_bg_img from "../../../../public/images/landing-page/header_bg.png";

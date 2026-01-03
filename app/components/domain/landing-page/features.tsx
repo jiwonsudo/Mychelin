@@ -20,7 +20,7 @@ const FEATURE_DATA: FeatureItem[] = [
     id: 1,
     iconSrcs: [marker_icon],
     title: "저번에 맛있었던 그 집, 어디였지?\n이런 질문은 이제 넣어 두세요.",
-    desc: "방문했던 식당은 까먹지 않게 지도 위에 표시되고,\n평가 당시 느꼈던 맛을 바로 볼 수 있어요.\n지도 위에 나의 맛집 컬렉션을 표시해 보세요.",
+    desc: "방문했던 식당은 까먹지 않게\n지도 위에 표시되고,\n평가 당시 느꼈던 맛을 바로 볼 수 있어요.\n지도 위에 나의 맛집 컬렉션을 표시해 보세요.",
     imgSrc: ex_map_img,
     imgAlt: "나만의 식당을 저장하는 지도 이미지",
   },
@@ -64,53 +64,15 @@ export const Features = () => {
                 />
               ))}
             </div>
-            <h1 className={`mt-24 text-2xl/9 font-semibold ${
+            <h1 className={`mt-24 text-3xl font-medium ${
                 idx % 2 === 1 ? "text-right" : ""
               }`}>{feature.title}</h1>
-            <p className={`mt-8 ${
+            <p className={`mt-8 text-lg font-light ${
                 idx % 2 === 1 ? "text-right" : ""
               }`}>{feature.desc}</p>
           </div>
         </div>
       ))}
     </section>
-
-    // <section className="mt">
-    //   <div className="container mx-auto px-6">
-    //     <h2 className="text-3xl font-bold text-center mb-16">앱 주요 기능</h2>
-
-    //     <div className="flex flex-col gap-24">
-    //       {FEATURE_DATA.map((feature, index) => (
-    //         <div
-    //           key={feature.id}
-    //           className={`flex flex-col md:flex-row items-center gap-12 ${
-    //             index % 2 === 0 ? 'md:flex-row-reverse' : ''
-    //           }`}
-    //         >
-    //           {/* 이미지 영역 */}
-    //           <div className="w-full md:w-1/2">
-    //             <div className="relative aspect-video overflow-hidden rounded-2xl shadow-lg">
-    //               <Image
-    //                 src={feature.imgSrc}
-    //                 alt={feature.imgAlt}
-    //                 fill
-    //                 className="object-cover"
-    //               />
-    //             </div>
-    //           </div>
-
-    //           {/* 텍스트 영역 */}
-    //           <div className="w-full md:w-1/2 space-y-4">
-    //             <span className="text-orange-500 font-semibold">0{index + 1}</span>
-    //             <h3 className="text-2xl font-bold">{feature.title}</h3>
-    //             <p className="text-gray-600 leading-relaxed">
-    //               {feature.desc}
-    //             </p>
-    //           </div>
-    //         </div>
-    //       ))}
-    //     </div>
-    //   </div>
-    // </section>
   );
 };
