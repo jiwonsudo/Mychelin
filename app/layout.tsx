@@ -15,7 +15,7 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="ko" className={`${fonts.bookkBold.variable} ${fonts.bookkLight.variable} ${fonts.notoSansKRVar.variable}`}>
+    <html lang="ko" className={`${fonts.hsBombaram.variable} ${fonts.pretendardVariable.variable}`}>
       <body>
         {children}
       </body>

@@ -1,23 +1,15 @@
 import localFont from 'next/font/local';
 
-const bookkBold = localFont({
-  src: '../public/fonts/BookkMyungjo_Bold.woff',
+const pretendardVariable = localFont({
+  src: '../public/fonts/PretendardVariable.woff2',
   display: 'swap',
-  weight: '700',
-  variable: '--font-bookk-bold',
+  variable: '--font-pretendard',
 })
 
-const bookkLight = localFont({
-  src: '../public/fonts/BookkMyungjo_Light.woff',
+const hsBombaram = localFont({
+  src: '../public/fonts/HSBombaram.woff',
   display: 'swap',
-  weight: '400',
-  variable: '--font-bookk-light',
+  variable: '--font-bombaram',
 })
 
-const notoSansKRVar = localFont({
-  src: '../public/fonts/NotoSansKR-VariableFont_wght.woff',
-  display: 'swap',
-  variable: '--font-noto',
-})
-
-export const fonts = { bookkBold, bookkLight, notoSansKRVar };
+export const fonts = { pretendardVariable, hsBombaram };

@@ -2,9 +2,8 @@
 
 @theme inline {
   /* custom colors */
-  --color-landing-page: #EBC190;
+  --color-main: #231F20;
   /* custom fonts */
-  --font-main: var(--font-noto), ui-sans-serif, system-ui;
-  --font-bookk-bold: var(--font-bookk-bold);
-  --font-bookk-light: var(--font-bookk-light);
+  --font-main: var(--font-pretendard), ui-sans-serif, system-ui;
+  --font-pretty: var(--font-bombaram);
 }
