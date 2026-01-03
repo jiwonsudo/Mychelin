@@ -64,7 +64,7 @@ export const Features = () => {
                 />
               ))}
             </div>
-            <h1 className={`mt-24 text-3xl font-medium ${
+            <h1 className={`mt-24 text-3xl leading-11 font-medium ${
                 idx % 2 === 1 ? "text-right" : ""
               }`}>{feature.title}</h1>
             <p className={`mt-8 text-lg font-light ${
