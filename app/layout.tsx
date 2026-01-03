@@ -2,6 +2,8 @@ import type { Metadata } from "next";
 import { fonts } from "./fonts";
 import "./globals.css";
 
+import { Navbar } from "./components/layout/navbar";
+
 
 
 export const metadata: Metadata = {
@@ -16,7 +18,8 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="ko" className={`${fonts.hsBombaram.variable} ${fonts.pretendardVariable.variable}`}>
-      <body>
+      <body className="font-main">
+        <Navbar/>
         {children}
       </body>
     </html>
