@@ -1,24 +1,25 @@
 import Image from "next/image";
 import Link from "next/link";
 
-import logo_beige from "../../public/logo_beige.svg";
+import logo_img from "../../public/logo.svg";
 
 export const Navbar = () => {
   return (
-    <nav className="flex justify-between items-center px-2 fixed top-0 left-0 w-full h-12.5">
+    <nav className="flex justify-between items-center px-2 fixed top-0 left-0 w-full h-12 font-main font-light
+    bg-neutral-300/15 border border-neutral-300/50 rounded-b-2xl shadow-md shadow-neutral-300 backdrop-blur-md">
       <Link href="/" className="flex h-8">
-        <div className="h-full aspect-square">
+        <div className="flex justify-between items-center h-full w-25">
           <Image
-            src={logo_beige}
+            src={logo_img}
             alt="logo"
-            className="w-8 h-8 object-contain"
-            sizes="32px"
+            className="flex w-7 h-7 object-contain"
+            sizes="28px"
             priority={true}
           />
-          <h1></h1>
+          <h1 className="flex h-6 text-md">Mychelin</h1>
         </div>
       </Link>
-      <Link href="/login" className="flex mr-3 font-noto text-landing-page">
+      <Link href="/login" className="flex mr-3 text-sm">
         로그인
       </Link>
     </nav>
