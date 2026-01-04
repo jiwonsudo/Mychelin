@@ -1,7 +1,7 @@
 import Image from "next/image";
 import Link from "next/link";
 
-import logo_img from "../../../public/logo.svg";
+import logo_img from "@/public/logo.svg";
 
 export const Navbar = () => {
   return (
@@ -22,7 +22,7 @@ export const Navbar = () => {
         </div>
       </Link>
       <Link href="/login" className="mr-3 text-sm">
-        로그인
+        로그인 / 회원가입
       </Link>
     </nav>
   );

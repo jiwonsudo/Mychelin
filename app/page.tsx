@@ -1,6 +1,6 @@
-import { Features } from "./components/domain/landing-page/Features";
-import { Hero } from "./components/domain/landing-page/Hero";
-import { CallToAction } from "./components/domain/landing-page/CallToAction";
+import { Features } from "@/app/components/domain/landing-page/Features";
+import { Hero } from "@/app/components/domain/landing-page/Hero";
+import { CallToAction } from "@/app/components/domain/landing-page/CallToAction";
 
 
 export default function Home() {

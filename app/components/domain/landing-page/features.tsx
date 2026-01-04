@@ -1,10 +1,10 @@
 import Image, { StaticImageData } from "next/image";
 
-import marker_icon from "../../../../public/icons/marker_icon.svg";
-import glass_icon from "../../../../public/icons/glass_icon.svg";
-import share_icon from "../../../../public/icons/share_icon.svg";
-import ex_map_img from "../../../../public/images/landing-page/ex_map_img.png";
-import ex_note_img from "../../../../public/images/landing-page/ex_note_img.png";
+import marker_icon from "@/public/icons/marker_icon.svg";
+import glass_icon from "@/public/icons/glass_icon.svg";
+import share_icon from "@/public/icons/share_icon.svg";
+import ex_map_img from "@/public/images/landing-page/ex_map_img.png";
+import ex_note_img from "@/public/images/landing-page/ex_note_img.png";
 
 interface FeatureItem {
   id: number;

@@ -1,9 +1,9 @@
 import type { Metadata } from "next";
-import { fonts } from "./fonts";
-import "./globals.css";
+import { fonts } from "@/app/fonts";
+import "@/app/globals.css";
 
-import { Navbar } from "./components/layout/Navbar";
-import { Footer } from "./components/layout/Footer";
+import { Navbar } from "@/app/components/layout/Navbar";
+import { Footer } from "@/app/components/layout/Footer";
 
 export const metadata: Metadata = {
   title: "Mychelin",
