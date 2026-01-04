@@ -17,7 +17,7 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="ko" className={`${fonts.hsBombaram.variable} ${fonts.pretendardVariable.variable}`}>
-      <body className="font-main">
+      <body className="font-main mt-12">
         <Navbar/>
         {children}
         <Footer/>
