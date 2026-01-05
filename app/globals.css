@@ -1,5 +1,9 @@
 @import "tailwindcss";
 
+input:focus {
+  outline: none;
+}
+
 @theme inline {
   /* custom colors */
   --color-main: #231F20;

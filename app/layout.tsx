@@ -8,6 +8,9 @@ import { Footer } from "@/app/components/layout/Footer";
 export const metadata: Metadata = {
   title: "Mychelin",
   description: "당신만의 미식 가이드북",
+  icons: {
+    icon: "../public/logo.svg"
+  }
 };
 
 export default function RootLayout({
