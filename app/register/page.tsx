@@ -1,9 +1,9 @@
-import { RegisterLayout } from "@/app/components/domain/register/RegisterLayout";
+import { RegisterContainer } from "@/app/components/domain/register/RegisterContainer";
 
 export default function RegisterPage() {
   return (
     <div>
-      <RegisterLayout></RegisterLayout>
+      <RegisterContainer></RegisterContainer>
     </div>
   );
 }

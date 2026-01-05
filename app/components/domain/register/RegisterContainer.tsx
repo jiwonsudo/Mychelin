@@ -17,7 +17,7 @@ interface StageMsg {
   notSameMsg?: string;
 }
 
-export const RegisterLayout = () => {
+export const RegisterContainer = () => {
   const [currStageIdx, setCurrStageIdx] = useState(0);
   const [isTFTouched, setIsTFTouched] = useState(false);
   const [errorType, setErrorType] = useState<
@@ -104,7 +104,7 @@ export const RegisterLayout = () => {
       <div className="break-keep">
         <h1 className="text-3xl font-medium">{currStageMsg.title}</h1>
         <p className="mt-4 mb-10 text-lg font-light">{currStageMsg.sub}</p>
-        <div className="flex justify-between items-center max-w-110">
+        <div className="flex justify-between items-center max-w-110 m-auto">
           <div className="mr-4">
             <TextField
               key={`field-${currStageIdx}`}
