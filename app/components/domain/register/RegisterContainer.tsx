@@ -110,6 +110,7 @@ export const RegisterContainer = () => {
               className="block"
               placeholder={currStageMsg.placeholderText}
               type={currField === "pw" ? "password" : "text"}
+              isPW={currField === "pw" ? true : false}
               value={currValue}
               onChange={(e) => {
                 const val = e.target.value;
@@ -130,6 +131,7 @@ export const RegisterContainer = () => {
                 className="mt-4 block"
                 placeholder="비밀번호 확인"
                 type="password"
+                isPW={true}
                 value={pwConfirm}
                 onChange={(e) => {
                   setPwConfirm(e.target.value);
