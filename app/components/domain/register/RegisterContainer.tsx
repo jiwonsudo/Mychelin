@@ -30,7 +30,7 @@ export const RegisterContainer = () => {
     pw: "",
   });
 
-  const [pwConfirm, setPwConfirm] = useState("");  // 비밀번호 일치여부 확인용
+  const [pwConfirm, setPwConfirm] = useState(""); // 비밀번호 일치여부 확인용
 
   const fieldKeys = ["username", "email", "pw"] as const;
   const currField = fieldKeys[currStageIdx];
@@ -145,7 +145,7 @@ export const RegisterContainer = () => {
                   }
                 }}
                 onKeyDown={(e) => {
-                  if (e.key === 'Enter') {
+                  if (e.key === "Enter") {
                     if (checkValueValidity(currValue)) {
                       if (currValue !== pwConfirm) {
                         setErrorType("mismatch");

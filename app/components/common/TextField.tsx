@@ -1,3 +1,5 @@
+"use client";
+
 import { useState } from "react";
 
 import { type FontSize, sizeStyles } from "@/app/constants/design";
@@ -10,7 +12,7 @@ interface TextFieldProps extends React.InputHTMLAttributes<HTMLInputElement> {
 export const TextField = ({
   fontSize = "md",
   className = "",
-  isPW=false,
+  isPW = false,
   type,
   ...props
 }: TextFieldProps) => {
@@ -30,7 +32,7 @@ export const TextField = ({
         type={inputType}
         {...props}
       />
-      
+
       {isPW && (
         <button
           type="button"
