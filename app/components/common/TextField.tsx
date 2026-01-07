@@ -24,9 +24,9 @@ export const TextField = ({
   return (
     <div className={`relative flex items-center w-full ${className}`}>
       <input
-        className={`w-full bg-neutral-300/15 border border-neutral-300/50 shadow-[0_10px_10px_-5px_#D4D4D480] 
-          rounded-3xl backdrop-blur-md hover:shadow-[0_10px_10px_-5px_#d4d4d4]
-          duration-200 placeholder:text-neutral-400/80 focus:shadow-[0_10px_10px_-5px_#b6b6b6] 
+        className={`w-full bg-neutral-300/40 border border-neutral-300/80 shadow-[0_10px_10px_-5px_#d4d4d4] 
+          rounded-3xl backdrop-blur-md hover:shadow-[0_10px_10px_-5px_#b8b8b8]
+          duration-200 placeholder:text-neutral-400/80 focus:shadow-[0_10px_10px_-5px_#9f9f9f] 
           font-main outline-none ${sizeStyles[fontSize]} 
           ${isPW ? "pr-12" : ""}`} // 버튼 자리를 위해 패딩 추가
         type={inputType}
