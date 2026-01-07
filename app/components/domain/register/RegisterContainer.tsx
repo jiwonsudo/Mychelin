@@ -28,8 +28,9 @@ export const RegisterContainer = () => {
     username: "",
     email: "",
     pw: "",
-    pwConfirm: "", // PW 일치여부 확인용
   });
+
+  const [pwConfirm, setPwConfirm] = useState("");  // 비밀번호 일치여부 확인용
 
   const fieldKeys = ["username", "email", "pw"] as const;
   const currField = fieldKeys[currStageIdx];
@@ -92,9 +93,7 @@ export const RegisterContainer = () => {
         setIsTFTouched(false);
         setErrorType(null);
       } else {
-        const { pwConfirm, ...cleanData } = formData; // 데이터 구조분해할당
-
-        alert(`회원가입 완료! ${JSON.stringify(cleanData)}`);
+        alert(`회원가입 완료! ${JSON.stringify(formData)}`);
       }
     }
   };
@@ -131,11 +130,9 @@ export const RegisterContainer = () => {
                 className="mt-4 block"
                 placeholder="비밀번호 확인"
                 type="password"
-                value={formData.pwConfirm}
+                value={pwConfirm}
                 onChange={(e) => {
-                  setFormData({ ...formData, pwConfirm: e.target.value });
-                  if (isTFTouched) {
-                  }
+                  setPwConfirm(e.target.value);
                 }}
                 onBlur={(e) => {
                   setIsTFTouched(true);
@@ -148,7 +145,7 @@ export const RegisterContainer = () => {
                 onKeyDown={(e) => {
                   if (e.key === 'Enter') {
                     if (checkValueValidity(currValue)) {
-                      if (currValue !== formData.pwConfirm) {
+                      if (currValue !== pwConfirm) {
                         setErrorType("mismatch");
                       } else handleNext();
                     }
