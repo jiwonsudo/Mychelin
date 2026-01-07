@@ -101,7 +101,7 @@ export const RegisterContainer = () => {
         setIsTFTouched(false);
         setErrorType(null);
       } else {
-        alert(`회원가입 완료! ${JSON.stringify(formData)}`);
+        alert(`회원가입 완료! ${JSON.stringify(formData)}`); // TODO: 회원가입 정보 백엔드로 연결하기
       }
     }
   };
@@ -123,7 +123,7 @@ export const RegisterContainer = () => {
               onChange={(e) => {
                 const val = e.target.value;
                 setFormData({ ...formData, [currField]: val });
-                if (errorType) checkValueValidity(val); // 타이핑시 에러 지우기
+                if (errorType) checkValueValidity(val); // 타이핑시 에러조건 벗어나면 에러 지우기
               }}
               onBlur={() => {
                 setIsTFTouched(true);
@@ -131,6 +131,7 @@ export const RegisterContainer = () => {
               }}
               // 엔터키 지원
               onKeyDown={(e) => e.key === "Enter" && handleNext()}
+              required
             ></TextField>
 
             {currStageIdx === 2 && (
@@ -182,7 +183,7 @@ export const RegisterContainer = () => {
           href="/login"
           className="mt-32 block text-sm underline text-neutral-400 font-light"
         >
-          이미 Mychelin의 회원이신가요?
+          이미 Mychelin의 회원이신가요? &#8594; 로그인
         </Link>
       </div>
     </div>
