@@ -1,6 +1,6 @@
 import Image, { StaticImageData } from "next/image";
 
-import marker_icon from "@/public/icons/marker_icon.svg";
+import marker_icon from "@/public/icons/marker_icon.png";
 import glass_icon from "@/public/icons/glass_icon.svg";
 import share_icon from "@/public/icons/share_icon.svg";
 import ex_map_img from "@/public/images/landing-page/ex_map_img.png";
@@ -47,6 +47,7 @@ export const Features = () => {
         >
           <div className="w-[40%] max-w-5xl">
             <Image src={feature.imgSrc} alt={feature.imgAlt} />
+            <p className="mr-6 text-right text-xs font-light">{idx === 0 && '*서비스 예시를 위한 가상의 음식점입니다.'}</p>
           </div>
           <div className="mt-8">
             <div
