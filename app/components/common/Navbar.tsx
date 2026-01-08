@@ -23,7 +23,7 @@ export const Navbar = () => {
             sizes="28px"
             priority={true}
           />
-          <h1 className="h-6 text-md font-medium">Mychelin</h1>
+          <h1 className="h-6 text-md font-light">Mychelin</h1>
         </div>
       </Link>
 
