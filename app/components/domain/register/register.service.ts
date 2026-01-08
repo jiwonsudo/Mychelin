@@ -1,4 +1,4 @@
-import { RegisterFormData, RegisterResponse } from "@/app/components/domain/register/register.types";
+import { RegisterFormData, RegisterResponse } from "./register.types";
 
 export const registerService = {
   async signUp(data: RegisterFormData): Promise<RegisterResponse> { 

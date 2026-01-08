@@ -1,4 +1,4 @@
-import { LoginErrorType } from "@/app/components/domain/login/login.types";
+import { LoginErrorType } from "./login.types";
 
 export const LOGIN_ERROR_MESSAGES: Record<Exclude<LoginErrorType, null>, string> = {
   blank: '아이디와 비밀번호를 모두 입력해 주세요.',

@@ -1,4 +1,4 @@
-import { LoginFormData, LoginResponse } from "@/app/components/domain/login/login.types";
+import { LoginFormData, LoginResponse } from "./login.types";
 
 export const loginService = {
   async login(data: LoginFormData): Promise<LoginResponse> {

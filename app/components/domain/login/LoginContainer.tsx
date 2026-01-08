@@ -6,9 +6,9 @@ import { useRouter } from "next/navigation";
 import { TextField } from "@/app/components/common/TextField";
 import { Button } from "@/app/components/common/Button";
 
-import { useLoginForm } from "@/app/components/domain/login/hooks/useLoginForm";
-import { LOGIN_ERROR_MESSAGES } from "@/app/components/domain/login/login.constants";
-import { LoginFormData } from "@/app/components/domain/login/login.types";
+import { useLoginForm } from "./hooks/useLoginForm";
+import { LOGIN_ERROR_MESSAGES } from "./login.constants";
+import { LoginFormData } from "./login.types";
 
 export const LoginContainer = () => {
   const router = useRouter();

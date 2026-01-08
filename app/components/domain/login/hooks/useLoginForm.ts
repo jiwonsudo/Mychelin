@@ -2,7 +2,7 @@
 
 import { useState } from "react";
 
-import { LoginErrorType, LoginFormData } from "@/app/components/domain/login/login.types";
+import { LoginErrorType, LoginFormData } from "../login.types";
 
 export const useLoginForm = () => {
   const [formData, setFormData] = useState<LoginFormData>({ id: "", password: "" });

@@ -3,11 +3,13 @@
 
 import Link from "next/link";
 import { useRouter } from "next/navigation";
+
 import { TextField } from "@/app/components/common/TextField";
 import { Button } from "@/app/components/common/Button";
-import { useRegisterForm } from "@/app/components/domain/register/hooks/useRegisterForm";
-import { registerService } from "@/app/components/domain/register/register.service";
-import { RegisterFormData } from "@/app/components/domain/register/register.types";
+
+import { useRegisterForm } from "./hooks/useRegisterForm";
+import { registerService } from "./register.service";
+import { RegisterFormData } from "./register.types";
 
 export const RegisterContainer = () => {
   const router = useRouter();

@@ -1,4 +1,4 @@
-import { StageMsg } from "@/app/components/domain/register/register.types";
+import { StageMsg } from "./register.types";
 
 export const REGISTER_STAGES: Record<number, StageMsg> = {
   0: {

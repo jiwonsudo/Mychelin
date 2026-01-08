@@ -1,8 +1,8 @@
 "use client";
 
 import { useState } from "react";
-import { REGISTER_STAGES } from "@/app/components/domain/register/register.constants";
-import { RegisterErrorType, RegisterFormData } from "@/app/components/domain/register/register.types";
+import { REGISTER_STAGES } from "../register.constants";
+import { RegisterErrorType, RegisterFormData } from "../register.types";
 
 export const useRegisterForm = () => {
   const [currStageIdx, setCurrStageIdx] = useState(0);
