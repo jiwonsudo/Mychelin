@@ -1,4 +1,4 @@
-import { FontSize, sizeStyles } from "@/app/constants/design";
+import { FontSize, sizeStyles } from "@/app/design";
 
 interface ButtonProps extends React.ButtonHTMLAttributes<HTMLButtonElement> {
   fontSize?: FontSize;

@@ -2,7 +2,7 @@
 
 import { useState } from "react";
 
-import { type FontSize, sizeStyles } from "@/app/constants/design";
+import { type FontSize, sizeStyles } from "@/app/design";
 
 interface TextFieldProps extends React.InputHTMLAttributes<HTMLInputElement> {
   label: string;

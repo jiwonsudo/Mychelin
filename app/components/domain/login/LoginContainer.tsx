@@ -1,77 +1,80 @@
-'use client'
-
-import { useState } from "react";
+"use client";
 
 import Link from "next/link";
+import { useRouter } from "next/navigation";
 
 import { TextField } from "@/app/components/common/TextField";
 import { Button } from "@/app/components/common/Button";
 
-export const LoginContainer = () => {
-  const [id, setId] = useState('');
-  const [pw, setPw] = useState('');
-  const [errorType, setErrorType] = useState<'blank' | 'noID' | 'wrongPW' | null>(null);
-  const errorMsg = {
-    'blank': '아이디와 비밀번호를 모두 입력해 주세요.',
-    'noID': '회원정보가 존재하지 않는 아이디(이메일)입니다.',
-    'wrongPW': '비밀번호가 틀렸습니다.',
-  }
+import { useLoginForm } from "@/app/components/domain/login/hooks/useLoginForm";
+import { LOGIN_ERROR_MESSAGES } from "@/app/components/domain/login/login.constants";
+import { LoginFormData } from "@/app/components/domain/login/login.types";
 
-  const handleLogin = (e?: React.FormEvent) => {
-    // form 태그 사용 시 페이지 새로고침 방지
-    if (e) e.preventDefault();
-    
-    if (!id || !pw) return;
-    console.log(id, pw);
-    // TODO: 로그인 API 연결, 피드백 에러코드로 연결
-  }
+export const LoginContainer = () => {
+  const router = useRouter();
+  const { formData, errorType, updateField, validate } = useLoginForm();
+
+  const onLoginSubmit = async (data: LoginFormData) => {
+    // 실제 연결 시 주석 해제
+    // try {
+    //   await loginService.login(data);
+    //   router.push("/");
+    // } catch (err: any) {
+    //   setErrorType("wrongPW"); // 예시 에러 처리
+    // }
+
+    // TODO: Login API 연결(loginService.login 사용)
+    alert(`로그인 시도 데이터: ${data.id}, ${data.password}`);
+    router.push("/");
+  };
 
   return (
     <div className="h-[calc(100vh-3rem)] flex justify-center items-center text-center">
-      <div className="break-keep">
+      <div className="break-keep max-w-lg w-full px-4">
         <h1 className="text-3xl font-medium">로그인</h1>
-        <p className="mt-4 mb-10 text-lg font-light">
-          Mychelin에 다시 오신 것을 환영합니다.
+        <p className="mt-4 mb-10 text-lg font-light text-neutral-500">
+          다시 만나서 반가워요!
         </p>
-        <form onSubmit={handleLogin} className="flex justify-between items-center max-w-110 m-auto">
-          <div className="mr-4">
+
+        <form 
+          onSubmit={(e) => {
+            e.preventDefault();
+            if(validate()) onLoginSubmit(formData);
+          }}
+          className="flex flex-col md:flex-row justify-between items-center gap-4 m-auto"
+        >
+          <div className="w-full space-y-4">
             <TextField
               label="아이디(이메일)"
-              type="username"
+              type="text"
               autoComplete="username"
-              value={id}
-              onChange={(e) => {
-                setId(e.target.value);
-                if (errorType) setErrorType(null); // 타이핑 시 에러 초기화
-              }}
-              required
-            ></TextField>
+              value={formData.id}
+              onChange={(e) => updateField("id", e.target.value)}
+            />
             <TextField
-              className="mt-4 block"
               label="비밀번호"
-              type="current-password"
               isPW={true}
-              value={pw}
-              onChange={(e) => {
-                setPw(e.target.value);
-                if (errorType) setErrorType(null); // 타이핑 시 에러 초기화
-              }}
-              required
-            ></TextField>
+              autoComplete="current-password"
+              value={formData.password}
+              onChange={(e) => updateField("password", e.target.value)}
+            />
           </div>
 
-          <Button type="submit" className="bg-neutral-300/50!">로그인</Button>
+          <Button type="submit" className="bg-neutral-300/50! w-full md:w-auto h-full">
+            확인
+          </Button>
         </form>
-        <div className="min-h-6">
-          <p className="mt-4 text-sm text-amber-600">
-            {errorType && errorMsg[errorType]}
-          </p>
+
+        <div className="min-h-10 mt-4">
+          {errorType && (
+            <p className="text-sm text-amber-600">
+              {LOGIN_ERROR_MESSAGES[errorType]}
+            </p>
+          )}
         </div>
-        <Link
-          href="/register"
-          className="mt-32 block text-sm underline text-neutral-400 font-light"
-        >
-          아직 Michelin에 가입하지 않으셨나요? &#8594; 회원가입
+        
+        <Link href="/register" className="mt-20 block text-sm underline text-neutral-400 font-light">
+          아직 회원이 아니신가요? → 회원가입
         </Link>
       </div>
     </div>
