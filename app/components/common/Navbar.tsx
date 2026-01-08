@@ -14,7 +14,7 @@ export const Navbar = () => {
       className="flex justify-between items-center px-2 fixed top-0 left-0 w-full h-12 font-light
       bg-neutral-300/30 border border-neutral-300/50 rounded-b-2xl shadow-[0_0_10px_2px_#D4D4D480] backdrop-blur-md z-10"
     >
-      <Link href="/" className="flex h-8">
+      <Link href={isLoggedIn ? "/dashboard" : "/"} className="flex h-8">
         <div className="flex justify-between items-center h-full w-25">
           <Image
             src={logo_img}
