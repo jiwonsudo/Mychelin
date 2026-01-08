@@ -33,9 +33,9 @@ export const TextField = ({
     <div className={`relative flex items-center w-full font-main ${className}`}>
       <input
         placeholder=" "
-        className={`peer w-full bg-neutral-300/40 border border-neutral-300/80 shadow-[0_10px_10px_-5px_#d4d4d4] 
-          rounded-3xl backdrop-blur-md hover:shadow-[0_10px_10px_-5px_#b8b8b8]
-          duration-200 focus:shadow-[0_10px_10px_-5px_#9f9f9f] outline-none ${
+        className={`peer w-full bg-neutral-300/15 border border-neutral-300/50 shadow-[0_10px_10px_-5px_#d4d4d480] 
+          rounded-3xl backdrop-blur-md hover:shadow-[0_10px_10px_-5px_#d4d4d4]
+          duration-200 focus:shadow-[0_10px_10px_-5px_#a7a7a7] outline-none ${
             sizeStyles[fontSize]
           }
           placeholder:text-transparent focus:placeholder:text-neutral-400/80 
