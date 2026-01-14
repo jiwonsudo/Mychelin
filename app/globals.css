@@ -11,3 +11,14 @@ input:focus {
   --font-main: var(--font-pretendard), ui-sans-serif, system-ui;
   --font-pretty: var(--font-bombaram);
 }
+
+body {
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  
+  /* 텍스트 가독성 최적화 알고리즘 활성화 */
+  text-rendering: optimizeLegibility;
+  
+  /* 폰트 두께 계산 시 발생하는 소수점 픽셀 보정 */
+  font-smooth: always;
+}
