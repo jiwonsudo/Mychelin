@@ -8,7 +8,7 @@ import { TextField } from "@/app/components/common/TextField";
 import { Button } from "@/app/components/common/Button";
 
 import { useRegisterForm } from "./hooks/useRegisterForm";
-import { registerService } from "./register.service";
+// import { registerService } from "./register.services";
 import { RegisterFormData } from "./register.types";
 
 export const RegisterContainer = () => {
