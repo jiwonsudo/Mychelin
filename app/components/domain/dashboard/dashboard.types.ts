@@ -1,7 +1,7 @@
 export interface CarouselData {
   id: string | number;
   title: string;
-  subtitle: string;
+  description: string;
   imageUrl: string;
   rating?: number; // 별점
 }
