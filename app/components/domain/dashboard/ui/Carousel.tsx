@@ -11,6 +11,7 @@ export const Carousel = ({ data, onItemClick }: CarouselProps) => {
   const scrollRef = useRef<HTMLDivElement>(null);
   const [isDrag, setIsDrag] = useState(false);
   const velocity = useRef(0);
+  const startX = useRef(0);
   const lastX = useRef(0);
   const momentumRafID = useRef<number | null>(null);
 
@@ -28,6 +29,7 @@ export const Carousel = ({ data, onItemClick }: CarouselProps) => {
     if (!scrollRef.current) return;
     setIsDrag(true);
     const x = "touches" in e ? e.touches[0].pageX : e.pageX;
+    startX.current = x;
     lastX.current = x;
     velocity.current = 0;
     if (momentumRafID.current) {
@@ -52,6 +54,16 @@ export const Carousel = ({ data, onItemClick }: CarouselProps) => {
     momentumRafID.current = requestAnimationFrame(applyMomentum);
   };
 
+  const handleItemClick = (e: React.MouseEvent, item: any) => {
+    const endX = e.pageX;
+    const dragDistance = Math.abs(startX.current - endX);
+
+    // 드래그 거리가 5px 미만일 때만 클릭으로 간주 (사용자 의도 파악)
+    if (dragDistance < 5) {
+      onItemClick?.(item);
+    }
+  }
+
   return (
     <div className="overflow-hidden">
       <h1 className="ml-18 mb-6 text-2xl font-bold">{"여기에 캐러셀 제목"}</h1>
@@ -68,19 +80,19 @@ export const Carousel = ({ data, onItemClick }: CarouselProps) => {
         onTouchMove={handleMove}
         onTouchEnd={handleEnd}
         // 모바일에서 브라우저 스크롤과 충돌 방지
-        className="flex gap-14 overflow-x-hidden px-12 cursor-grab active:cursor-grabbing select-none touch-pan-y"
+        className="flex gap-14 overflow-x-hidden px-12 py-6 -my-4 cursor-grab active:cursor-grabbing select-none touch-pan-y"
       >
         {data.map((item, i) => (
           <div
             key={item.id}
-            onClick={() => onItemClick?.(item)} // 데이터 전달
+            onMouseUp={(e) => handleItemClick(e, item)} // 데이터 전달
             className={`
-            min-w-75 h-45 shrink-0
-            ${i === 0 ? "ml-10" : ""} 
-            ${i === data.length - 1 ? "mr-10" : ""}
+            min-w-75 h-45 shrink-0 rounded-3xl shadow-[0_0_10px_2px_#d4d4d4]
+            ${i === 0 ? "ml-4" : ""} 
+            ${i === data.length - 1 ? "mr-4" : ""}
           `}
           >
-            <div className="group w-full h-full relative overflow-hidden rounded-3xl shadow-[0_0_10px_2px_#d4d4d480] backdrop-blur-md">
+            <div className="group w-full h-full relative overflow-hidden rounded-3xl backdrop-blur-md">
               <Image
                 src={item.imageUrl}
                 alt={item.title}
