@@ -10,6 +10,7 @@ export const useRegisterForm = () => {
   const [pwConfirm, setPwConfirm] = useState("");
   const [errorType, setErrorType] = useState<RegisterErrorType>(null);
   const [isTouched, setIsTouched] = useState(false);
+  const [isFocused, setIsFocused] = useState(false);
 
   const fieldKeys = ["username", "email", "password"] as const;
   const currField = fieldKeys[currStageIdx];
@@ -41,7 +42,7 @@ export const useRegisterForm = () => {
   };
 
   return {
-    currStageIdx, formData, pwConfirm, errorType, isTouched, currStageMsg, currField,
-    setFormData, setPwConfirm, setErrorType, setIsTouched, handleNext, validate
+    currStageIdx, formData, pwConfirm, errorType, isTouched, isFocused, currStageMsg, currField,
+    setFormData, setPwConfirm, setErrorType, setIsTouched, setIsFocused, handleNext, validate
   };
 };
