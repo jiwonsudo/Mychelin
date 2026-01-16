@@ -3,7 +3,7 @@
 import { useRef, useState } from "react";
 import Image from "next/image";
 
-import { CarouselProps } from "../dashboard.types";
+import { CarouselData, CarouselProps } from "../dashboard.types";
 
 import star_img from "@/public/icons/star_white.png";
 
@@ -54,12 +54,15 @@ export const Carousel = ({ data, onItemClick }: CarouselProps) => {
     momentumRafID.current = requestAnimationFrame(applyMomentum);
   };
 
-  const handleItemClick = (e: React.MouseEvent, item: any) => {
-    const endX = e.pageX;
+  const handleItemClick = (e: React.MouseEvent | React.TouchEvent, item: CarouselData) => {
+    const endX = "changedTouches" in e 
+    ? e.changedTouches[0].pageX 
+    : (e as React.MouseEvent).pageX;
+
     const dragDistance = Math.abs(startX.current - endX);
 
-    // 드래그 거리가 5px 미만일 때만 클릭으로 간주 (사용자 의도 파악)
-    if (dragDistance < 5) {
+    // 드래그 거리 1px 미만에서만 item click
+    if (dragDistance < 1) {
       onItemClick?.(item);
     }
   }
